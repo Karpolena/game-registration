@@ -14,7 +14,6 @@ class Login extends Component {
 
     handleNameChange(event) {
         this.setState({name: event.target.value})
-        //  console.log('name', event.target.value);
     }
 
     handlePasswordChange(event) {
@@ -25,25 +24,26 @@ class Login extends Component {
     render() {
         return(
             <div className="forms">
-            <form >
+            <form>
+                <label htmlFor="userName" className="labelName">Username</label>
                 <input
                 type="text"
-                placeholder="Username"
                 value={this.state.name}
                 onChange={this.handleNameChange.bind(this)}
                 className="userName forms__item"
-                />                
+                id="userName"
+                /> 
+                <label htmlFor="userPassword" className="labelPassword">Password</label>               
                  <input
-                type="text"
-                placeholder="Password"
+                type="password"
                 value={this.state.password}
                 onChange={this.handlePasswordChange.bind(this)}
                 className="userPassword forms__item"
                 />
                 
             </form>
-            <button onClick={this.handleSubmit.bind(this)} className="letMeIn"> Let me in </button>
-            <a href="#" />
+            <div className="greyDecor"> Let me in </div>
+            <button onClick={this.handleSubmit.bind(this)} className="letMeIn"></button>            
             </div>
         );
     }
