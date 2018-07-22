@@ -22,7 +22,8 @@ module.exports = {
 
     output: {
         path: path.join(__dirname, "public"),
-        filename: "js/[name].js"
+        filename: "js/[name].js",
+        publicPath: './../'//for images
     },
 
     resolve: {
@@ -49,9 +50,19 @@ module.exports = {
                 })
             },
             {
+                test: /\.(png|jp(e*)g|svg)$/,  
+                use: [{
+                    loader: 'url-loader',
+                    options: { 
+                        limit: 8000, // Convert images< 8kb to base64 strings
+                        name: 'images/[name].[ext]'
+                    } 
+                }]
+            },
+            /*{
                 test: /\.(jpe?g|gif|png|woff2|eot|svg|woff|ttf)$/,
                 loader: "file?emitFile=false&name=[path][name].[ext]"
-            },
+            },*/
             {
                 test: /\.json$/,
                 loader: "json-loader"

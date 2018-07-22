@@ -4,6 +4,10 @@
 	padding:0;
 	box-sizing: border-box;
 }
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
 body{
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 100;
@@ -28,10 +32,15 @@ button, input {
     font-size: 1em;
     outline: none;
 }
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
 .main {
     width: 750px;
     height: 500px;
-    margin: 300px auto;
     box-shadow:  0px 30px 30px -5px rgba(0, 0, 0, 0.27);
     background-color:#222;
     display: flex;
@@ -47,11 +56,11 @@ button, input {
     color:#ffcc00;
 }
 .signIn {
-    // background-image: url(./../img/1.jpg);
+    background-image: url(./../static/img/1.jpg);
     background-position: center;
 }
 .signUp {
-    // background-image: url(./../img/2.jpg);
+    background-image: url(./../static/img/2.jpg);
     background-position: center;
 }
 form {

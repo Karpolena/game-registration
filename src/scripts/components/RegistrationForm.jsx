@@ -145,7 +145,7 @@ class RegistrationForm extends Component {
     }
     render() {
 
-        if (this.state.registered) {
+        /*if (this.state.registered) {
             return(
                 <div className="main">
                 <div>
@@ -165,7 +165,17 @@ class RegistrationForm extends Component {
                     <Registration />                
                 </div>
             )
-        }      
+        }  */
+        
+        return (
+            <div className="main">
+                <div>
+                    <button onClick={this.SignInState.bind(this)} className="signIn buttons__item active"> Sign In </button>
+                    <button onClick={this.SignUpState.bind(this)} className="signUp buttons__item"> Sign Up </button>
+                </div>
+                   {this.state.registered ? <Login /> : <Registration />}
+                </div>
+        )
         
     }
 }
